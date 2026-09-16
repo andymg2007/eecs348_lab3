@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Font Control</title>
+</head>
+<body>
+  <p id="myParagraph" style="border: 5px solid black; padding: 10px;">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is some dummy text.
+  </p>
+
+  <label>RGB color (e.g. 255,0,0): </label>
+  <input type="text" id="rgbInput">
+  <button onclick="applyColor()">Apply</button>
+
+  <br><br>
+
+  <label>Border width (px): </label>
+  <input type="text" id="widthInput">
+  <button onclick="applyWidth()">Apply</button>
+
+  <script>
+    function applyColor() {
+      var rgb = document.getElementById("rgbInput").value;
+      var color = "rgb(" + rgb + ")";
+      document.getElementById("myParagraph").style.color = color;
+      document.getElementById("myParagraph").style.borderColor = color;
+    }
+
+    function applyWidth() {
+      var width = document.getElementById("widthInput").value;
+      document.getElementById("myParagraph").style.borderWidth = width + "px";
+    }
+  </script>
+</body>
+</html>
